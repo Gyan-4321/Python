@@ -1,3 +1,22 @@
+#for read the file contents
+
 with open("demo.txt", "r") as file:
     data = file.read()
     print(data)
+
+#for write the file
+
+with open("demo.txt", "w") as file:
+    file.write("Hello! This is written to the file.\n")
+    file.write("You can add more lines here.\n")
+
+#for append the text in file
+
+with open("demo.txt", "w") as file:
+     file.write("This line is appended.\n")
+
+# New file creation 
+
+with open("newfile.py", "x") as file:
+    file.write("Hello! This is wonderful file.\n")
+
