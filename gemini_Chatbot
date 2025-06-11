@@ -1,0 +1,40 @@
+import streamlit as st
+import google.generativeai as genai
+import os
+
+# Set your Gemini API key from environment variable
+genai.configure(api_key=os.getenv("xyz"))
+
+st.set_page_config(page_title="Gemini Chatbot", layout="centered")
+st.title("🤖 gemini Chatbot")
+st.info("Ask me anything!")
+
+genai.configure(api_key="AIzaSyDC0FlX5lfQXB_Ee_grp9zS2bcQKFvLkAA")
+
+# Initialize the chat model
+model = genai.GenerativeModel("gemini-2.0-flash")
+
+# Create session-based chat
+if "chat" not in st.session_state:
+    st.session_state.chat = model.start_chat(history=[])
+
+# Show chat history
+for msg in st.session_state.chat.history:
+    role = "user" if msg.role == "user" else "assistant"
+    with st.chat_message(role):
+        text = msg.parts[0].text if hasattr(msg.parts[0], "text") else str(msg.parts[0])
+        st.markdown(text)
+
+# User input
+user_input = st.chat_input("Type your message here...")
+
+if user_input:
+    # Display user message
+    st.chat_message("user").markdown(user_input)
+
+    # Send to Gemini and get response
+    try:
+        response = st.session_state.chat.send_message(user_input)
+        st.chat_message("assistant").markdown(response.text)
+    except Exception as e:
+        st.error(f"Error: {e}")
