@@ -9,7 +9,7 @@ st.set_page_config(page_title="Gemini Chatbot", layout="centered")
 st.title("🤖 gemini Chatbot")
 st.info("Ask me anything!")
 
-genai.configure(api_key="AIzaSyDC0FlX5lfQXB_Ee_grp9zS2bcQKFvLkAA")
+genai.configure(api_key="")
 
 # Initialize the chat model
 model = genai.GenerativeModel("gemini-2.0-flash")
