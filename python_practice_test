@@ -1,0 +1,57 @@
+Beginner Problems (Great for absolute beginners or to solidify basics)
+Problem 1: Even or Odd Checker
+
+Description: Write a program that asks the user to enter an integer. Then, print whether the number is "Even" or "Odd".
+Concepts to Practice: input(), int(), if/else statements, modulo operator (%).
+Problem 2: Simple Calculator
+
+Description: Create a program that takes two numbers and an operator (+, -, *, /) from the user. Perform the corresponding calculation and print the result. Include error handling for division by zero and invalid operators.
+Concepts to Practice: input(), int() or float(), if/elif/else, basic arithmetic operators, error handling (try/except for division by zero).
+Problem 3: List Sum
+
+Description: Given a list of numbers, write a function that returns the sum of all elements in the list.
+Concepts to Practice: Functions, lists, for loop, sum() (can be used to check your manual loop sum).
+Problem 4: String Reverser
+
+Description: Write a function that takes a string as input and returns the string reversed.
+Concepts to Practice: Functions, strings, string slicing ([::-1]), or for loops with concatenation.
+Problem 5: Factorial Calculator
+
+Description: Write a function to calculate the factorial of a given non-negative integer. (Factorial of 5 is 5*4*3*2*1 = 120).
+Concepts to Practice: Functions, for loop, if statements (for base case 0! = 1).
+Intermediate Problems (Building on basics, introducing more complex structures)
+Problem 6: Palindrome Checker
+
+Description: Write a function that checks if a given string is a palindrome (reads the same forwards and backwards, ignoring case and non-alphanumeric characters).
+Concepts to Practice: Functions, strings, string methods (.lower(), .isalnum()), loops or slicing.
+Hint: Convert the string to lowercase and remove non-alphanumeric characters first.
+Problem 7: Simple Guessing Game
+
+Description: The program generates a random number between 1 and 100. The user has a limited number of tries (e.g., 5 or 10) to guess the number. After each guess, tell the user if their guess was too high, too low, or correct.
+Concepts to Practice: random module (random.randint()), while loop, if/elif/else, break, input().
+Problem 8: Count Vowels and Consonants
+
+Description: Write a function that takes a string and returns a dictionary containing the count of vowels and consonants in the string (case-insensitive).
+Concepts to Practice: Functions, strings, dictionaries, for loop, string methods (.lower(), .isalpha()).
+Problem 9: File Word Counter
+
+Description: Write a program that takes a text file's name as input. Read the file and count the frequency of each word. Print the top 5 most frequent words and their counts.
+Concepts to Practice: File I/O (open(), read(), readlines()), strings, string methods (.split(), .lower(), .strip(), .replace()), dictionaries, collections.Counter (for an elegant solution), sorting.
+Hint: Remember to handle punctuation.
+Problem 10: To-Do List Manager (Console-based)
+
+Description: Create a simple command-line to-do list application. It should allow users to:
+Add a task.
+View all tasks.
+Mark a task as completed.
+Delete a task.
+Exit.
+Concepts to Practice: Lists, while loop (main menu loop), input(), if/elif/else, list methods (.append(), .pop(), indexing), functions for each action.
+Hint: Store tasks as strings in a list. You might use another list or modify the task string to indicate completion (e.g., "Buy milk [COMPLETED]").
+How to Practice Effectively:
+Read the Problem Carefully: Understand exactly what's being asked.
+Plan (Pseudocode): Before writing code, jot down the steps you'll take in plain English.
+Write Code: Implement your plan.
+Test: Run your code with different inputs to ensure it works correctly, including edge cases (e.g., empty strings, zero, negative numbers if applicable).
+Debug: If it doesn't work, use print() statements or a debugger to find out why.
+Refactor (Improve): Once it works, look for ways to make your code more readable, efficient, or robust.
