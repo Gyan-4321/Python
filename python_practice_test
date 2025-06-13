@@ -1,20 +1,69 @@
 Beginner Problems (Great for absolute beginners or to solidify basics)
-Problem 1: Even or Odd Checker
-
+__________________________________
+Problem 1: Even or Odd Checker 
 Description: Write a program that asks the user to enter an integer. Then, print whether the number is "Even" or "Odd".
 Concepts to Practice: input(), int(), if/else statements, modulo operator (%).
+
+Ans-
+x = int(input("enter the number:"))
+
+y = x % 2 
+
+if y == 1:
+    print("Number is odd")
+else:
+ print("Number is even")
+
+-----------------------------------------------
 Problem 2: Simple Calculator
 
 Description: Create a program that takes two numbers and an operator (+, -, *, /) from the user. Perform the corresponding calculation and print the result. Include error handling for division by zero and invalid operators.
 Concepts to Practice: input(), int() or float(), if/elif/else, basic arithmetic operators, error handling (try/except for division by zero).
+   
+    x = int(input("enter the first number:"))
+    operator = input("Enter the operator(+, -, *, /):")
+    y = int(input("enter the second number:"))
+    if operator == '+':
+        result =  x + y
+    elif operator == '-':
+        result =  x - y
+    elif operator == '/':
+        result =  x/y
+    elif operator == '%':
+        result =  x%y
+    elif operator == '*':
+        result =  x*y
+    print("Result:", result)
+
+----------------------------------------------
+
 Problem 3: List Sum
 
 Description: Given a list of numbers, write a function that returns the sum of all elements in the list.
 Concepts to Practice: Functions, lists, for loop, sum() (can be used to check your manual loop sum).
+
+def sum_list_numbers():
+
+    x = [4,6,8,10,12,13,15]
+    y = sum(x)
+
+    print("print the value",y)
+
+-----------------------------------------------------------------
 Problem 4: String Reverser
 
 Description: Write a function that takes a string as input and returns the string reversed.
 Concepts to Practice: Functions, strings, string slicing ([::-1]), or for loops with concatenation.
+
+def string():
+    s = "Jindagi"
+    return s[::-1]
+
+result = string()
+
+print("reverse_string:",result)
+----------------------------------------------
+
 Problem 5: Factorial Calculator
 
 Description: Write a function to calculate the factorial of a given non-negative integer. (Factorial of 5 is 5*4*3*2*1 = 120).
@@ -29,15 +78,20 @@ Problem 7: Simple Guessing Game
 
 Description: The program generates a random number between 1 and 100. The user has a limited number of tries (e.g., 5 or 10) to guess the number. After each guess, tell the user if their guess was too high, too low, or correct.
 Concepts to Practice: random module (random.randint()), while loop, if/elif/else, break, input().
+
 Problem 8: Count Vowels and Consonants
 
 Description: Write a function that takes a string and returns a dictionary containing the count of vowels and consonants in the string (case-insensitive).
 Concepts to Practice: Functions, strings, dictionaries, for loop, string methods (.lower(), .isalpha()).
+
+------------------------------------
 Problem 9: File Word Counter
 
 Description: Write a program that takes a text file's name as input. Read the file and count the frequency of each word. Print the top 5 most frequent words and their counts.
 Concepts to Practice: File I/O (open(), read(), readlines()), strings, string methods (.split(), .lower(), .strip(), .replace()), dictionaries, collections.Counter (for an elegant solution), sorting.
 Hint: Remember to handle punctuation.
+
+---------------------------------------------------
 Problem 10: To-Do List Manager (Console-based)
 
 Description: Create a simple command-line to-do list application. It should allow users to:
@@ -55,3 +109,83 @@ Write Code: Implement your plan.
 Test: Run your code with different inputs to ensure it works correctly, including edge cases (e.g., empty strings, zero, negative numbers if applicable).
 Debug: If it doesn't work, use print() statements or a debugger to find out why.
 Refactor (Improve): Once it works, look for ways to make your code more readable, efficient, or robust.
+
+
+solution:
+
+tasks = []
+    
+def add_task():
+    task_name = input("Enter the task: ")
+    tasks.append({"task": task_name, "completed": False})
+    print("Task added!")
+
+def view_tasks():
+    if not tasks:
+        print("No task found")
+        return
+    print("\n your taks:")
+    for i, t in enumerate(tasks, 1):
+        status = "✅" if t["completed"] else "❌"
+        print(f"{i}.{t['task']} [{status}]")
+
+def mark_completed():
+    view_tasks()
+    try:
+        task_num = int(input("enter task number to mark as completed: "))
+        if 1 <= task_num <= len(tasks):
+            tasks[task_num -1] ["completed"] =  True
+            print("✅task marked as completed")
+        else:
+            print("! invalid task number")
+    except ValueError:
+        print("! Please enter a valid number")
+
+def delete_task():
+    view_tasks()
+    try:
+        task_num = int(input("Enter task number to delete: "))
+        if 1 <= task_num <= len(tasks):
+            deleted = tasks.pop(task_num - 1)
+            print(f"🗑️ Deleted task: {deleted['task']}")
+        else:
+            print("❗ Invalid task number.")
+    except ValueError:
+        print("❗ Please enter a valid number.")
+
+def main():
+    while True:
+        print("\n==== TO-DO LIST MENU ====")
+        print("1. Add task")
+        print("2. view task")
+        print("3. Mark Task as Completed")
+        print("4. Delete Task")
+        print("5. Exit")
+    
+        choice = input("choose the option (1-5):")
+
+        if choice == "1":
+            add_task()
+        elif choice == "2":
+            view_tasks()
+        elif choice == "3":
+            mark_completed()
+        elif choice == "4":
+            delete_task()
+        elif choice == "5":
+            print("👋 Exiting the app. Goodbye!")
+            break
+        else:
+            print("❗ Invalid choice. Please enter a number between 1 and 5.")
+    
+
+
+    
+
+
+        
+
+
+
+
+
